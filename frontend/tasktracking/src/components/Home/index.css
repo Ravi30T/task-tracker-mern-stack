@@ -1,0 +1,373 @@
+.home-container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.new-task-btn {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.filter-options {
+  width: 100px;
+  height: 25px;
+}
+
+.new-task-btn:hover {
+  background-color: #45a049;
+}
+
+.task-card-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.task-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.task-card h3 {
+  margin: 0 0 10px;
+  color: #333;
+}
+
+.task-card p {
+  margin: 5px 0;
+  color: #666;
+}
+
+.task-controls {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.task-controls label {
+  margin-right: 10px;
+  font-size: 14px;
+}
+
+.task-controls select {
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.due-date {
+  font-size: 14px;
+}
+
+.due-date.overdue {
+  color: red;
+  font-weight: bold;
+}
+
+.delete-btn,
+.edit-btn {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.edit-btn {
+  background-color: #ffa500;
+  margin-right: 10px;
+}
+
+.delete-btn:hover,
+.edit-btn:hover {
+  background-color: #d32f2f;
+}
+
+.edit-btn.disabled {
+  background-color: #ccc; 
+  color: #070606; 
+  cursor: not-allowed;
+}
+
+.edit-btn:disabled {
+  opacity: 0.5;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.modal,
+.delete-modal {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal h2,
+.delete-modal h2 {
+  margin-bottom: 15px;
+}
+
+.add-edit-heading {
+  color: #45a049;
+}
+
+.modal input,
+.modal textarea,
+.modal select {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.modal select{
+  cursor: pointer;
+}
+
+@media (max-width: 767px) {
+  .modal input{
+    width: 95%;
+  }
+  .modal textarea {
+    width: 95%;
+  }
+
+  .modal select{
+    width: 101%;
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 768px) {
+  .modal input{
+    width: 95%;
+  }
+  
+  .modal textarea {
+    max-width: 95%;
+  }
+}
+
+.add-btn,
+.cancel-btn,
+.delete-confirm-btn {
+  margin-top: 10px;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.add-update-btn {
+  background-color: #2196F3;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  margin-right: 10px;
+}
+
+.add-update-btn:hover{
+  background-color: rgba(33, 150, 243, 0.7);
+  box-shadow: 0 4px 8px rgba(33, 150, 243, 0.3);
+}
+
+.close-btn{
+  background-color: #9E9E9E;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.close-btn:hover {
+  background-color: rgba(158, 158, 158, 0.7);
+  box-shadow: 0 4px 8px rgba(128, 128, 128, 0.3);
+}
+
+.delete-yes-btn {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  margin-right: 10px;
+}
+
+.delete-yes-btn:hover {
+  background-color: rgba(76, 175, 80, 0.7);
+  box-shadow: 0 4px 8px rgba(0, 128, 0, 0.3);
+}
+
+.delete-no-btn {
+  background-color: #F44336;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.delete-no-btn:hover {
+  background-color: rgba(244, 67, 54, 0.7);
+  box-shadow: 0 4px 8px rgba(255, 0, 0, 0.3);
+}
+
+.add-btn {
+  background-color: #4caf50;
+  color: white;
+}
+
+.add-btn:hover {
+  background-color: #45a049;
+}
+
+.cancel-btn {
+  background-color: #ddd;
+  color: #333;
+}
+
+.cancel-btn:hover {
+  background-color: #ccc;
+}
+
+.delete-confirm-btn {
+  background-color: #f44336;
+  color: white;
+}
+
+.delete-confirm-btn:hover {
+  background-color: #d32f2f;
+}
+
+
+.new-task-filter-option-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.err-msg-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+}
+
+.err-msg {
+  color: red;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.loader-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 40vh;
+}
+
+.loader svg {
+  width: 50px !important; 
+  height: 50px !important;
+}
+
+.filter-options {
+  border: 1px solid #ccc; 
+  border-radius: 4px; 
+  background-color: #f9f9f9; 
+  font-size: 14px;
+  color: #333; 
+  appearance: none; 
+  outline: none; 
+  cursor: pointer;
+  text-align: center;
+}
+
+.filter-options:focus {
+  border-color: #007bff; 
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.filter-options option {
+  font-size: 14px; 
+  color: #333; 
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.filter-options option:hover {
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
+
+@media (max-width: 767px) {
+  .new-task-btn {
+    height: 35px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+
+  .delete-confirmation-msg {
+    font-size: 14px;
+  }
+
+  .filter-options option {
+    font-size: 13px; 
+    color: #333; 
+    background-color: #fff;
+    cursor: pointer;
+  }
+}
+
+.delete-confirmation-msg {
+  font-size: 18px;
+  text-align: center;
+}
+
+.delete-confirmation-btn-container {
+  display: flex;
+  justify-content: center;
+}
+
+.span-el {
+  font-size: 15px;
+  margin-right: 2px;
+  font-weight: bold;
+}
